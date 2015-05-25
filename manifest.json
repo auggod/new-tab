@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "New tab",
+  "description": "This extension replaces new tab",
+  "version": "1.0",
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "tabs",
+    "https://ajax.googleapis.com/",
+    "unlimitedStorage",
+    "contextMenus",
+    "storage"
+  ],
+  "icons": {
+    "16": "icon-bitty.png",
+    "48": "icon-small.png",
+    "128": "icon-large.png"
+  }
+}

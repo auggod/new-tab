@@ -1,0 +1,25 @@
+doctype html
+html(data-ng-app="NewTabApp" lang="en" ng-csp, data-ng-controller="MainCtrl")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no")
+    title {{lastProject.title || 'New tab'}}
+    link(rel="stylesheet", href="app/dist/app.css")
+  body(colors="#0B1428")
+    #app
+      input#search(type="search", ng-model="search", placeholder="filter here")
+      ul#projects
+        li.project(ng-repeat="project in projects | filter:search track by $index")
+          .actions
+            span.delete(ng-click="remove($index)") &#x2a2f;
+          a(ng-click="show($index)")
+            span.title {{project.title}}
+      div(offset-space="120")
+
+      .toolbar
+        form(ng-submit="addProject()")
+          input(type="text", ng-model="form.title", placeholder="New project")
+          button#addProject.btn-light(type="submit") +
+    script(type="text/javascript", src="app/scripts/vendor/angular/angular.js")
+    script(type="text/javascript", src="app/scripts/vendor/lodash/lodash.js")
+    script(type="text/javascript", src="app/scripts/app.js") 

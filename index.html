@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html data-ng-app="NewTabApp" lang="en" ng-csp data-ng-controller="MainCtrl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{{lastProject.title || 'New tab'}}</title>
+    <link rel="stylesheet" href="app/dist/app.css">
+  </head>
+  <body colors="#0B1428">
+    <div id="app">
+      <input id="search" type="search" ng-model="search" placeholder="filter here">
+      <ul id="projects">
+        <li ng-repeat="project in projects | filter:search track by $index" class="project">
+          <div class="actions"><span ng-click="remove($index)" class="delete">&#x2a2f;</span></div><a ng-click="show($index)"><span class="title">{{project.title}}</span></a>
+        </li>
+      </ul>
+      <div offset-space="120"></div>
+      <div class="toolbar">
+        <form ng-submit="addProject()">
+          <input type="text" ng-model="form.title" placeholder="New project">
+          <button id="addProject" type="submit" class="btn-light">+</button>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript" src="app/scripts/vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="app/scripts/vendor/lodash/lodash.js"></script>
+    <script type="text/javascript" src="app/scripts/app.js"> </script>
+  </body>
+</html>
