@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#4224CA">
     <title>{{lastProject.title || 'New tab'}}</title>
     <link rel="stylesheet" href="app/dist/app.css">
   </head>
-  <body colors="#0B1428">
+  <body colors="#4224CA">
     <div id="app">
-      <input id="search" type="search" ng-model="search" placeholder="filter here">
+      <input id="search" type="search" ng-model="search" placeholder="...">
       <ul id="projects">
         <li ng-repeat="project in projects | filter:search track by $index" class="project">
           <div class="actions"><span ng-click="remove($index)" class="delete">&#x2a2f;</span></div><a ng-click="show($index)"><span class="title">{{project.title}}</span></a>

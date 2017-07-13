@@ -37,7 +37,7 @@ app.controller 'MainCtrl', ['$scope' ($scope) !->
         console.log 'Projects saved'
 
       $scope.$apply!
-  , 2000)
+  , 1000)
 
   $scope.remove = (index) ->
     $scope.projects.splice(index, 1)

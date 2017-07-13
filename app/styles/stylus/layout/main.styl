@@ -1,14 +1,14 @@
 html, body
   min-height 100%
-  background #fff
+  background main-bg-color
 
 @keyframes fadeIn
   from
     opacity 0
 
 #app
-  //animation fadeIn 1000ms $ease-in-quad
-  
+  animation fadeIn 1000ms $ease-in-quad
+
 body
   background main-bg-color
   font font
@@ -19,6 +19,9 @@ img
 
 a
   color inherit
+
+input[type="search"]
+  background rgba(0, 0, 0, .2)
 
 .content-body
   margin: 0 10px
@@ -97,7 +100,7 @@ ul, li
   from
     opacity 0
     transform translateX(-100px)
-    
+
 ul#projects li.project
   a
     line-height 60px
@@ -120,9 +123,13 @@ ul#projects li.project
   opacity 0
   position absolute
   z-index 100
+  padding 10px
   height 60px
-  background rgba(255 255 255 .5)
+  background rgba(255 255 255 .2)
   right 0
+  transition background 200ms $ease-in-out-quad
+  &:hover
+    background rgba(255 255 255 .1)
 
 .actions li
   display inline-block
@@ -132,12 +139,19 @@ span.delete
   display block
   font-size 1.2rem
   vertical-align bottom
-  line-height 60px
+  line-height 40px
+  font-size 1rem
+  border-radius 50%
   text-align center
-  width 60px
+  width 40px
   color #fff
+  transition background 200ms $ease-in-out-quad
+  -webkit-user-select none
+  -moz-user-select none
+  -ms-user-select none
+  user-select none
   &:hover
-    background red
+    background #FC3D39
 
 span.feedback
   display block
@@ -150,7 +164,7 @@ span.feedback
   right 0
   width 100%
   z-index 100
-  background #0B1428
+  background rgba(0, 0, 0, .2)
 
 .toolbar
   padding 10px
